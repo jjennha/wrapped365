@@ -22,7 +22,7 @@ export default class Leaderboard extends React.Component {
     }
     getTopTracks(token){
         $.ajax({
-            url: "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10",
+            url: "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=10",
             type: "GET",
             beforeSend: xhr => {
               xhr.setRequestHeader("Authorization", "Bearer " + token);

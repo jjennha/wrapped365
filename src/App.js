@@ -36,7 +36,7 @@ class App extends Component {
   }
   componentDidMount() {
     console.log("hash: "+hash.access_token);
-    let _token = 'BQBpx97IaiR_vu80o3OLxB_ixV2bBnA3ApS9P4Nsvzwax6tBAuqm3le3Fs76gKy44Sv61VxYrpSiXtCL6S_XNX8NsklTZTKr7RBjrHtUns0eBltAi5zAMcIEHlRi3pKwQizxIeV0dYQM5nGtDY5thZoVzeHmzT0dRnXeSUfOJjWyY-pCTJBQyz-PrLec7g';
+    let _token = 'BQDN2cwZQeCl2O8YoDso0s1wLm0mUubKiZdJfUdx3j5J311WdE5JPcTrtD7nLBJHyHM9w1xw8b3bMjp2WIu7tXDw7o_7oJ7HURoLW0zCcTKYnDYuoDE_Yw8TIEHQXYcEsCDWjtjl6wcFekijQQcE4CYAxU7ht9VSp2VKAlkpE1QTHcNS-zRjNc53z-GLhg';
     
 
     if (_token) {

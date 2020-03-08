@@ -10,7 +10,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,8 +21,8 @@
 }
 .App-header h1 {
   padding-bottom: 50px;
-    font-size: 100px;
-    text-transform: lowercase;
+  font-size: 100px;
+  text-transform: lowercase;
 }
 .App-link {
   color: #61dafb;
@@ -48,7 +48,7 @@ html, body {
 }
 
 body {
-  background-color: #333;
+  /* background-color: #333; */
   color: #eee;
   font-family: Helvetica, Arial;
   font-size: 3vmin;
@@ -84,13 +84,13 @@ body {
 .btn-nav {
   background-color: transparent;
   border-radius: 2em;
-  border: 0.2em solid #1ecd97;
+  border: 0.1em solid #1ecd97;
   color: #1ecd97;
   cursor: pointer;
-  font-size: 3vmin;
-  padding: 0.7em 1.5em;
+  padding: 0.2em 1em;
   text-transform: uppercase;
   transition: all 0.25s ease;
+  text-decoration: none;
 }
 
 .btn-nav:hover {
@@ -99,11 +99,14 @@ body {
 }
 
 .links-container {
-  padding: 10px;
+  padding: .5rem;
+  text-align: left;
+  background: #282c34;
 }
 .links {
   display: inline-flex;
   list-style-type: none;
+  margin: .5rem;
 }
 
 .links li {

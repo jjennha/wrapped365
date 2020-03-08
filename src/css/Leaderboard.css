@@ -1,14 +1,17 @@
 .leaderboard {
-  margin: 3rem;
+  margin: 1em 1em 0 1em;
 }
-.leaderboard h1 {
-  text-transform: uppercase;
-}
+
 .top-template {
   width: 50%;
-  padding: 8px;
+  padding: .9rem;
   margin-top: 20px;
   display: inline-grid;
+}
+.top-template-container {
+  display: inline-grid;
+  padding: 1rem;
+  background: #181a1d;
 }
 .top-template-header{
   text-align: center;
@@ -16,51 +19,43 @@
   background: #1ecd97;
   margin: 1rem;
   border-radius: 2rem;
+  font-size: 1rem;
 }
-.top-template-header h1 {
-  font-size: 1em;
-  text-transform: none;
-}
+
 .left {
-  margin-left: 20px; 
+  margin-left: 1.5rem; 
 }
 .right {
-  margin-right: 20px;
+  margin-right: 1.5rem;
 }
-.top-template-container {
-  display: inline-grid;
-  padding: 10px;
-  background: #181a1d;
-}
+
 .top-template-entry {
   display: inline-flex;
   background: #5f5f5f38;
   margin: 5px;
   border-left-style: ridge;
   text-align: left;
-  font-size: .5em;
+  font-size: 17px;
   height: 5rem;
-}
-.top-template-details {
-  padding: .3rem;
-  padding-left: .7rem;
-  line-height: 1rem;
-  width: 18rem;
-}
-.top-template-entry .rank {
-  font-size: 1.8em;
-  padding: rem;
-  width: 4rem;
-  text-align: center;
   line-height: 5rem;
 }
+.top-template-entry .rank {
+  min-width: 10%;
+  text-align: center;
+}
+.top-template-details {
+  padding: .3em;
+  padding-left: .7em;
+  line-height: 1rem;
+  height: 1.2em;
+}
+
 .top-template-entry h5 {
-  font-size: 10px;
   font-style: italic;
   color: #b0b6cae0;
 }
 .top-template-entry label {
-  font-size: 10px;
+  font-size: .8em;
   font-weight: 600;
   color: #dde2ef;
 }
@@ -78,10 +73,10 @@
   margin: 0 auto;
 }
 .artists-left {
-  padding-right: 1.5rem;
+  padding-right: 1.6em;
 }
 .artists-right {
-  padding-left: 1.5rem;
+  padding-left: 1.6em;
   margin-top: 50px
 }
 
@@ -90,10 +85,10 @@
   height: 9.38rem;
   border-radius: 50%;
   margin-bottom: 1.25rem;
+  border: 2px solid;
 }
 .artist-overlay {
   display: none;
-  background: #1ecd97a6;
 }
 .circle:hover .artist-overlay{
   background: #00000073;
@@ -102,13 +97,7 @@
   border-radius: 50%;
   margin-bottom: 1rem;
   display: inline-block;
-  line-height: 160px;
+  line-height: 9.38rem;
   font-weight: bold;
   text-transform: capitalize;
-  font-size: 15px;
 }
-
-
-
-
-
