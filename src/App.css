@@ -150,3 +150,7 @@ body {
 .App-nav {
   margin: 20px;
 }
+
+.main-body {
+  height: 100vh;
+}

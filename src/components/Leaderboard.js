@@ -22,7 +22,7 @@ export default class Leaderboard extends React.Component {
     }
     getTopTracks(token){
         $.ajax({
-            url: "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=10",
+            url: "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=15",
             type: "GET",
             beforeSend: xhr => {
               xhr.setRequestHeader("Authorization", "Bearer " + token);
@@ -36,7 +36,7 @@ export default class Leaderboard extends React.Component {
     }
     getTopArtists(token){
         $.ajax({
-            url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=10",
+            url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=15",
             type: "GET",
             beforeSend: xhr => {
               xhr.setRequestHeader("Authorization", "Bearer " + token);
@@ -57,7 +57,16 @@ export default class Leaderboard extends React.Component {
                     topArtists2: odd
                 });
             },
-            error: data => {console.log(data)}
+            error: data => {
+                console.log(data);
+                console.log(data.status);
+                if(data.status===401){
+                    console.log("int");
+                }
+                if(data.status==="401"){
+                    console.log("string");
+                }
+            }
           });
     }
     getCircleStyles(item) {

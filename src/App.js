@@ -17,6 +17,7 @@ import {
 import Three from "./components/Three";
 import Leaderboard from "./components/Leaderboard";
 import Two from "./components/Two";
+import Homepage from "./components/Homepage";
 
 
 var SpotifyWebApi = require('spotify-web-api-node');
@@ -32,14 +33,20 @@ class App extends Component {
     super();
     this.state = {
       token: null,
+      rToken: null
     };
   }
   componentDidMount() {
-    console.log("hash: "+hash.access_token);
-    let _token = 'BQDN2cwZQeCl2O8YoDso0s1wLm0mUubKiZdJfUdx3j5J311WdE5JPcTrtD7nLBJHyHM9w1xw8b3bMjp2WIu7tXDw7o_7oJ7HURoLW0zCcTKYnDYuoDE_Yw8TIEHQXYcEsCDWjtjl6wcFekijQQcE4CYAxU7ht9VSp2VKAlkpE1QTHcNS-zRjNc53z-GLhg';
-    
-
+    let _token = null;
+    console.log("global: "+globalToken.token);
+    if(this.state.token){
+      _token = this.state.token;
+    }else{
+      _token = hash.access_token;//'BQAQkwFzhywvcrbvMC4QxXZFs3rdie-mEg6nrO0GlJ-7bn57kCNzv7VnoEH_6Jz_P6EBCcqghCMCm3XU0msjdIj3eaWcZf7zvNHEZFbmjHp0Ox9bMxfHJGwLspnW8jHq3Axbuh7DG0ewIEQ8BIS1y8XE1O13wacna1-1lJEvXrALjuj8gqMQmRolzagBFw';
+    }
+    console.log("_token: "+_token);
     if (_token) {
+      getRefreshToken(_token);
       // Set token
       this.setState({
         token: _token
@@ -48,7 +55,6 @@ class App extends Component {
     }
     console.log(_token);
   }
-  
 
   render() {
     return (
@@ -56,16 +62,21 @@ class App extends Component {
       <div className="App">
         <div className="links-container">
         <ul className="links">
+            <li><Link className="btn-nav" to="/">Home</Link></li>
             <li><Link className="btn-nav" to="/leaderboard">Leaderboard</Link></li>
+            <li><Link className="btn-nav" to="/timeline">Timeline</Link></li>
             <li><Link className="btn-nav" to="/two">Two</Link></li>
             <li><Link className="btn-nav" to="/three">Three</Link></li>
         </ul>
         </div>
-
         
         <Switch>
+          
           <PrivateRoute path="/leaderboard">
             <Leaderboard token={this.state.token}/>
+          </PrivateRoute>
+          <PrivateRoute path="/timeline">
+            <Two token={this.state.token}/>
           </PrivateRoute>
           <PrivateRoute path="/two">
             <Two token={this.state.token}/>
@@ -76,6 +87,9 @@ class App extends Component {
           <PrivateRoute path="/three">
             <Three token={this.state.token}/>
           </PrivateRoute>
+          <Route path="/">
+            <Homepage/>
+          </Route>
         </Switch>
       </div>
         
@@ -104,8 +118,25 @@ const auth = {
     setTimeout(cb, 100);
   }
 };
-
+export function getRefreshToken(token){
+  console.log("get refresh");
+  $.ajax({
+    url: `https://api.spotify.com/api/token?grant_type=authorization_code&code=${token}&redirect_uri=${redirectUri}`,
+    type: "POST",
+    beforeSend: xhr => {
+      xhr.setRequestHeader("Authorization", "Bearer " + token);
+    },
+    success: data => {
+        console.log(data)
+    },
+    error: data => {console.log(data)}
+  });
+}
+// Check if access token is valid here
 function PrivateRoute({ children, ...rest }) {
+  console.log("here");
+  console.log("suthenticated? "+auth.isAuthenticated);
+  console.log("global: "+globalToken.token);
   return (
     <Route
       {...rest}
