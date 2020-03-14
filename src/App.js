@@ -3,8 +3,8 @@ import * as $ from "jquery";
 import './App.css';
 import { authEndpoint, clientId, clientSecret, redirectUri, scopes } from "./config";
 import hash from "./components/Hash";
-import Amplify, { Auth, Hub } from 'aws-amplify';
-import awsconfig from './aws-exports'; // your Amplify configuration
+//import Amplify, { Auth, Hub } from 'aws-amplify';
+//import awsconfig from './aws-exports'; // your Amplify configuration
 import {
   BrowserRouter as Router,
   Switch,
