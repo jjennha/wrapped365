@@ -42,8 +42,9 @@ class App extends Component {
     if(this.state.token){
       _token = this.state.token;
     }else{
-      _token = hash.access_token;//'BQAQkwFzhywvcrbvMC4QxXZFs3rdie-mEg6nrO0GlJ-7bn57kCNzv7VnoEH_6Jz_P6EBCcqghCMCm3XU0msjdIj3eaWcZf7zvNHEZFbmjHp0Ox9bMxfHJGwLspnW8jHq3Axbuh7DG0ewIEQ8BIS1y8XE1O13wacna1-1lJEvXrALjuj8gqMQmRolzagBFw';
+      _token = hash.access_token;
     }
+
     console.log("_token: "+_token);
     if (_token) {
       getRefreshToken(_token);
