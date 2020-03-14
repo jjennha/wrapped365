@@ -19,13 +19,6 @@ import Leaderboard from "./components/Leaderboard";
 import Two from "./components/Two";
 import Homepage from "./components/Homepage";
 
-
-var spotifyApi = new SpotifyWebApi({
-    clientId: clientId,
-    clientSecret: clientSecret,
-    redirectUri: redirectUri
-});
-
 class App extends Component {
   constructor() {
     super();
