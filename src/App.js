@@ -20,8 +20,6 @@ import Two from "./components/Two";
 import Homepage from "./components/Homepage";
 
 
-var SpotifyWebApi = require('spotify-web-api-node');
-
 var spotifyApi = new SpotifyWebApi({
     clientId: clientId,
     clientSecret: clientSecret,
