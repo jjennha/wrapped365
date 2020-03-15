@@ -3,8 +3,7 @@ import * as $ from "jquery";
 import './App.css';
 import { authEndpoint, clientId, clientSecret, redirectUri, scopes } from "./config";
 import hash from "./components/Hash";
-//import Amplify, { Auth, Hub } from 'aws-amplify';
-//import awsconfig from './aws-exports'; // your Amplify configuration
+import { Cache } from 'aws-amplify';
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,24 +27,31 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    let _token = null;
-    console.log("global: "+globalToken.token);
-    if(this.state.token){
-      _token = this.state.token;
-    }else{
-      _token = hash.access_token;
-    }
+    let _token = hash.access_token;
 
-    console.log("_token: "+_token);
-    if (_token) {
-      getRefreshToken(_token);
-      // Set token
+    var t = Cache.getItem('authToken');
+    if(t==null && _token){
+      const date = new Date();
+      const expiration = date.getTime() + 60*60*1000;
+      Cache.setItem('authToken',hash.access_token, {expires: expiration});
       this.setState({
         token: _token
       });
-      globalToken.token = _token;
+    }else if(t){
+      this.setState({
+        token: t
+      });
     }
-    console.log(_token);
+
+    // console.log("_token: "+_token);
+    // if (_token) {
+    //   getRefreshToken(_token);
+    //   // Set token
+    //   this.setState({
+    //     token: _token
+    //   });
+    // }
+    console.log(t);
   }
 
   render() {
@@ -65,7 +71,7 @@ class App extends Component {
         <Switch>
           
           <PrivateRoute path="/leaderboard">
-            <Leaderboard token={this.state.token}/>
+            <Leaderboard/>
           </PrivateRoute>
           <PrivateRoute path="/timeline">
             <Two token={this.state.token}/>
@@ -92,21 +98,19 @@ class App extends Component {
 
 export default App;
 
-const globalToken = {
-  token: null
-}
 
 const auth = {
-  isAuthenticated: false,
   authenticate(cb) {
-    auth.isAuthenticated = true;
+    const date = new Date();
+    const expiration = date.getTime() + 60*60*1000;
+    Cache.setItem("authenticated",true,{expires: expiration});
+
     window.location.href=`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
       "%20"
     )}&response_type=token&show_dialog=true`;
     setTimeout(cb, 100); // fake async
   },
   signout(cb) {
-    auth.isAuthenticated = false;
     setTimeout(cb, 100);
   }
 };
@@ -126,14 +130,17 @@ export function getRefreshToken(token){
 }
 // Check if access token is valid here
 function PrivateRoute({ children, ...rest }) {
-  console.log("here");
-  console.log("suthenticated? "+auth.isAuthenticated);
-  console.log("global: "+globalToken.token);
+  var isAuthenticated = Cache.getItem('authenticated');
+  var token = Cache.getItem('authToken');
+
+  console.log("PrivateRoute - authenticated? "+isAuthenticated);
+  console.log("PrivateRoute - global: "+token);
+
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        auth.isAuthenticated || globalToken.token != null ? (
+        isAuthenticated? (
           children
         ) : (
           <Redirect
@@ -155,7 +162,6 @@ function LoginPage() {
   let { from } = location.state || { from: { pathname: "/" } };
   let login = () => {
     auth.authenticate(() => {
-      console.log(from);
       history.replace(from);
     });
   };

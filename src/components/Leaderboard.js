@@ -1,6 +1,7 @@
 import React from "react";
 import * as $ from "jquery";
 import '../css/Leaderboard.css'
+import { Cache } from "aws-amplify";
 export default class Leaderboard extends React.Component {
     constructor(props){
         super(props);
@@ -13,16 +14,16 @@ export default class Leaderboard extends React.Component {
         this.getTopArtists = this.getTopArtists.bind(this);
     }
     componentDidMount(){
-        console.log(this.props.token);
+      var _token = Cache.getItem('authToken');
       this.setState({
-        token: this.props.token
+        token: _token
       });
-      this.getTopTracks(this.props.token);
-      this.getTopArtists(this.props.token);
+      this.getTopTracks(_token);
+      this.getTopArtists(_token);
     }
     getTopTracks(token){
         $.ajax({
-            url: "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=15",
+            url: "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10",
             type: "GET",
             beforeSend: xhr => {
               xhr.setRequestHeader("Authorization", "Bearer " + token);
@@ -31,12 +32,15 @@ export default class Leaderboard extends React.Component {
                 this.setState({topTracks: data.items});
                 console.log(this.state.topTracks);
             },
-            error: data => {console.log(data)}
+            error: data => {
+                console.log(data.status)
+                // Cache.clear();
+            }
           });
     }
     getTopArtists(token){
         $.ajax({
-            url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=15",
+            url: "https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=10",
             type: "GET",
             beforeSend: xhr => {
               xhr.setRequestHeader("Authorization", "Bearer " + token);
@@ -63,9 +67,7 @@ export default class Leaderboard extends React.Component {
                 if(data.status===401){
                     console.log("int");
                 }
-                if(data.status==="401"){
-                    console.log("string");
-                }
+                // Cache.clear();
             }
           });
     }
