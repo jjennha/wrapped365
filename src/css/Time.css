@@ -1,0 +1,26 @@
+.time-container {
+    font-size: 10rem
+}
+
+.time-view {
+    background: #923b9c;
+    color: #def975;
+    height: 90vh;
+}
+
+.time-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.footer-text {
+    text-align: right;
+}

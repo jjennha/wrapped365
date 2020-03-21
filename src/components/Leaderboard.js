@@ -46,6 +46,7 @@ export default class Leaderboard extends React.Component {
               xhr.setRequestHeader("Authorization", "Bearer " + token);
             },
             success: data => {
+                console.log(data);
                 var even = [];
                 var odd = [];
                 for(var i in data.items){

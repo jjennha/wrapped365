@@ -13,10 +13,11 @@ import {
   useHistory,
   useLocation
 } from "react-router-dom";
-import Three from "./components/Three";
+import Genres from "./components/Genres";
 import Leaderboard from "./components/Leaderboard";
-import Two from "./components/Two";
 import Homepage from "./components/Homepage";
+import Time from "./components/Time";
+import Tracks from "./components/Tracks";
 
 class App extends Component {
   constructor() {
@@ -43,14 +44,6 @@ class App extends Component {
       });
     }
 
-    // console.log("_token: "+_token);
-    // if (_token) {
-    //   getRefreshToken(_token);
-    //   // Set token
-    //   this.setState({
-    //     token: _token
-    //   });
-    // }
     console.log(t);
   }
 
@@ -62,9 +55,8 @@ class App extends Component {
         <ul className="links">
             <li><Link className="btn-nav" to="/">Home</Link></li>
             <li><Link className="btn-nav" to="/leaderboard">Leaderboard</Link></li>
-            <li><Link className="btn-nav" to="/timeline">Timeline</Link></li>
-            <li><Link className="btn-nav" to="/two">Two</Link></li>
-            <li><Link className="btn-nav" to="/three">Three</Link></li>
+            <li><Link className="btn-nav" to="/time">Time</Link></li>
+            <li><Link className="btn-nav" to="/tracks">Tracks</Link></li>
         </ul>
         </div>
         
@@ -73,17 +65,14 @@ class App extends Component {
           <PrivateRoute path="/leaderboard">
             <Leaderboard/>
           </PrivateRoute>
-          <PrivateRoute path="/timeline">
-            <Two token={this.state.token}/>
-          </PrivateRoute>
-          <PrivateRoute path="/two">
-            <Two token={this.state.token}/>
+          <PrivateRoute path="/time">
+            <Time token={this.state.token}/>
           </PrivateRoute>
           <Route path="/login">
             <LoginPage />
           </Route>
-          <PrivateRoute path="/three">
-            <Three token={this.state.token}/>
+          <PrivateRoute path="/tracks">
+            <Tracks/>
           </PrivateRoute>
           <Route path="/">
             <Homepage/>
@@ -108,7 +97,7 @@ const auth = {
     window.location.href=`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
       "%20"
     )}&response_type=token&show_dialog=true`;
-    setTimeout(cb, 100); // fake async
+    setTimeout(cb, 100); 
   },
   signout(cb) {
     setTimeout(cb, 100);
