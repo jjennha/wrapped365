@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as $ from "jquery";
 import './App.css';
-import { authEndpoint, clientId, clientSecret, redirectUri, scopes } from "./config";
+import { authEndpoint, clientId, redirectUri, scopes } from "./config_dev";
 import hash from "./components/Hash";
 import { Cache } from 'aws-amplify';
 import {
