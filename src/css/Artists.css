@@ -1,0 +1,54 @@
+.artist-container {
+    height: 100vh;
+    background-color: #bea1a1;
+    display: grid;
+    align-items: center;
+}
+  .artist-header h1 {
+      color: #5256d8;
+      font-size: 5rem;
+  }
+  .artists {
+    margin: 0 auto;
+    height: 100%;
+  }
+  .artist {
+    display: inline-block;
+    background-color: #0000004f;
+    border-radius: .35rem;
+    margin: 1.2rem;
+    padding: 1rem;
+  }
+  .artist-label {
+    background: #bea1a1;
+    height: 2.7rem;
+    line-height: 2.5rem;
+    left: 1.5rem;
+    top: .5rem;
+    position: relative;
+  }
+  .artist-label h4 {
+    font-size: .9rem;
+    background: #5256d8;
+    line-height: 2.5rem;
+    left: .2rem;
+    top: .2rem;
+    position: relative;
+    animation: slideIn 1.5s;
+  }
+  
+  .artist-circle {
+    width: 9.38rem;
+    height: 9.38rem;
+    border-radius: 50%;
+    border: 1.2px solid;
+    display: inline-block;
+  }
+  @keyframes slideIn {
+    from {
+		clip-path: inset(0 100% 0 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}

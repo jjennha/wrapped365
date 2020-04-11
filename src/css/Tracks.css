@@ -1,17 +1,16 @@
-  .track-container {
+ .track-container {
     display: inline-grid;
     padding: 1rem;
-    width: 90%;
     height:100%;
   }
   .track-header{
     text-align: center;
     padding: .5rem 1.5rem .5rem 1.5rem;
     border-radius: 4rem;
-    font-size: 1.5rem;
-    border: 0.1em solid #1ecd97;
-    background: #181a1d;
-    height:fit-content;
+    font-size: 3rem;
+    height: -moz-fit-content;
+    height: fit-content;
+    color: #def975;
   }
   @keyframes slideIn {
     100%  {width:100%;white-space: nowrap;}
@@ -44,14 +43,34 @@
     line-height: 1.2rem;
     height: 1.2em;
   }
-  .track-entry h5 {
-    font-style: italic;
-    color: #b0b6cae0;
-  }
-  .track-entry label {
+  .track-entry h3{
     font-size: .8em;
     font-weight: 600;
-    color: #dde2ef;
+    color: #def975;
+    background: #313131;
+    position: relative;
+    height: 1.5rem;
+    padding: .2rem .5rem;
+  }
+  .track-entry h4 {
+    font-style: italic;
+    font-size: .8rem;
+    color: #585858;
+    position: relative;
+    background: whitesmoke;
+    left: 1rem;
+    height: 1.5rem;
+    padding: .2rem .5rem;
+    width: fit-content;
+  }
+  .track-entry h5 {
+    font-size: .8em;
+    font-weight: 600;
+    background: #313131;
+    position: relative;
+    height: 1.5rem;
+    padding: .2rem .5rem;
+    width: fit-content;
   }
   .preview-img {
     width: 6rem;

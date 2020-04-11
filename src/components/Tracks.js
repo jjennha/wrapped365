@@ -3,6 +3,7 @@ import * as $ from "jquery";
 import '../css/Tracks.css'
 // import '.././App.css'
 import { Cache } from "aws-amplify";
+import Artists from "./Artists";
 
 export default class Tracks extends React.Component {
     constructor(props) {
@@ -11,6 +12,8 @@ export default class Tracks extends React.Component {
             topTracks: []
         }
         this.getTopTracks = this.getTopTracks.bind(this);
+        this.next = this.next.bind(this);
+        this.artistView = React.createRef();
     }
     componentDidMount() {
         var _token = Cache.getItem('authToken');
@@ -49,13 +52,13 @@ export default class Tracks extends React.Component {
 
     next() {
         this.setState({ displayNext: true }, () => {
-            this.genreView.scrollIntoView({ behavior: "smooth" });
+            this.artistView.scrollIntoView({ behavior: "smooth" });
         });
     }
 
     render() {
         return (
-            <div className="view-container">
+            <div className="trackview-container">
                 <div className={"track-container"}>
                     <div className="track-header">
                         <h1>Your Top Songs</h1>
@@ -75,14 +78,14 @@ export default class Tracks extends React.Component {
                                 </div>
 
                                 <div className="track-details">
-                                    <h4>
+                                    <h3>
                                         {track.name}
-                                    </h4>
-                                    <h5>
+                                    </h3>
+                                    <h4>
                                         {track.album.name}
-                                    </h5>
+                                    </h4>
                                     {track.artists.map((a, index) => {
-                                        return <label>{(index ? ', ' : "") + a.name}</label>
+                                        return <h5>{(index ? ', ' : "") + a.name}</h5>
                                     })}
                                 </div>
                             </div>
@@ -94,7 +97,10 @@ export default class Tracks extends React.Component {
                     </div>
                     
                 </div>
-                
+                <div ref={el => this.artistView = el}>
+                {/* <Genres tracks={this.state.todaysTracks}/> */}
+                    {this.state.displayNext ? <Artists/> : ""}
+                </div>
             </div>
         )
     }

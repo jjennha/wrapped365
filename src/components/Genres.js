@@ -10,7 +10,8 @@ export default class Genres extends React.Component {
         this.state = {
             genres: [],
             genreCount: {},
-            genresSorted: []
+            genresSorted: [],
+            displayNext: false
         }
         this.getGenres = this.getGenres.bind(this);
         this.genreView = React.createRef();

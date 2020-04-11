@@ -1,3 +1,8 @@
+.trackview-container {
+    text-align: center;
+  background-color: #000000;
+  height:100vh;
+}
 .time-container {
     font-size: 10rem
 }
@@ -5,16 +10,15 @@
 .time-view {
     background: #923b9c;
     color: #def975;
-    height: 90vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .time-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    text-align: center;
     width: 60%;
+    margin: 0 auto;
 }
 
 .header-text {
