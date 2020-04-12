@@ -1,10 +1,11 @@
 .trackview-container {
-    text-align: center;
+  text-align: center;
   background-color: #000000;
-  height:100vh;
+  min-height: 100vh;
+  max-height: fit-content;
 }
-.time-container {
-    font-size: 10rem
+.time-container h1{
+    font-size: 10em
 }
 
 .time-view {

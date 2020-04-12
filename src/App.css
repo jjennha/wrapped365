@@ -22,7 +22,7 @@ html, body {
     flex-direction: column;
 }
 .title {
-  font-size: 7rem;
+  font-size: 5em;
     color: #1ecd97;
     width: fit-content;
     margin: 0 auto;
@@ -30,10 +30,11 @@ html, body {
     display: inline-block;
 }
 .title-detail {
+  font-size: 1em;
   color: #923b9c
 }
 .description {
-  font-size: 2rem;
+  font-size: .3em;
   color: #def975;
   text-align: right;
    
@@ -45,16 +46,17 @@ html, body {
     background: #14173e;
     width: fit-content;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1em;
     border-radius: 10rem;
 }
 .profile-container h3 {
-  font-size: 1rem;
-  margin: 1rem;
+  font-size: 1em;
+  margin: 1em;
+  max-height: fit-content;
 }
 .profile-container .circle {
-  width: 5rem;
-  height: 5rem;
+  width: 5em;
+  height: 5em;
   border-radius: 50%;
   margin-bottom: 1.25rem;
   border: 1.2px solid;

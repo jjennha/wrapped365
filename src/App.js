@@ -62,7 +62,7 @@ class App extends Component {
       },
       error: data => {
         console.log(data)
-        // Cache.clear();
+         Cache.clear();
       }
     });
   }
@@ -72,7 +72,7 @@ class App extends Component {
       backgroundImage: `url(${
         item
         })`,
-      backgroundSize: '5rem'
+      backgroundSize: '5em'
     }
     return backgroundStyles;
   }

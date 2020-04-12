@@ -56,7 +56,7 @@ export default class Time extends React.Component {
             },
             error: data => {
                 console.log(data)
-                // Cache.clear();
+                Cache.clear();
             }
         });
     }

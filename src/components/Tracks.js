@@ -80,11 +80,11 @@ export default class Tracks extends React.Component {
                                     <h3>
                                         {track.name}
                                     </h3>
-                                    <h4>
+                                    <h3>
                                         {track.album.name}
-                                    </h4>
+                                    </h3>
                                     {track.artists.map((a, index) => {
-                                        return <h5>{(index ? ', ' : "") + a.name}</h5>
+                                        return <h3>{(index ? ', ' : "") + a.name}</h3>
                                     })}
                                 </div>
                             </div>

@@ -1,13 +1,14 @@
  .track-container {
     display: inline-grid;
     padding: 1rem;
-    height:100%;
+    min-height: 100vh;
+    max-height: fit-content;
   }
   .track-header{
     text-align: center;
-    padding: .5rem 1.5rem .5rem 1.5rem;
+    padding: .5em 1em .5em 1em;
     border-radius: 4rem;
-    font-size: 3rem;
+    font-size: 2em;
     height: -moz-fit-content;
     height: fit-content;
     color: #def975;
@@ -23,14 +24,14 @@
   .track-entry {
     display: inline-flex;
     background: #1d1f23;
-    margin: .3rem;
+    margin: .3em;
     border-left-style: ridge;
     text-align: left;
     font-size: 20px;
-    line-height: 6rem;
+    line-height: 6em;
     animation: slideIn 3s;
     overflow: hidden;
-    height: 6rem;
+    height: 6em;
   }
   .track-entry .rank {
     width: 7%;
@@ -40,46 +41,46 @@
   .track-details {
     padding: .5em;
     padding-left: .7em;
-    line-height: 1.2rem;
-    height: 1.2em;
+    line-height: 1.2em;
+    /* height: 1.2em; */
   }
-  .track-entry h3{
+  .track-entry h3 {
     font-size: .8em;
+  }
+  .track-entry h3:nth-child(1){
     font-weight: 600;
     color: #def975;
     background: #313131;
     position: relative;
-    height: 1.5rem;
-    padding: .2rem .5rem;
+    /* height: 1.5em; */
+    padding: .2em .5em;
   }
-  .track-entry h4 {
+  .track-entry h3:nth-child(2) {
     font-style: italic;
-    font-size: .8rem;
     color: #585858;
     position: relative;
     background: whitesmoke;
-    left: 1rem;
-    height: 1.5rem;
-    padding: .2rem .5rem;
+    left: 1em;
+    /* height: 1.5em; */
+    padding: .2em .5em;
     width: fit-content;
   }
-  .track-entry h5 {
-    font-size: .8em;
+  .track-entry h3:nth-child(3) {
     font-weight: 600;
     background: #313131;
     position: relative;
-    height: 1.5rem;
-    padding: .2rem .5rem;
+    /* height: 1.5em; */
+    padding: .2em .5em;
     width: fit-content;
   }
   .preview-img {
-    width: 6rem;
-    height: 6rem;
+    width: 6em;
+    height: 6em;
     overflow: hidden;
   }
   .preview-img img {
-    width: 6rem;
+    width: 6em;
   }
   .track-scroll {
-    margin-top: .5rem;
+    margin-top: .5em;
   }
