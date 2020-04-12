@@ -1,5 +1,6 @@
 .artist-container {
-    height: 100vh;
+    min-height: 100vh;
+    max-height: fit-content;
     background-color: #bea1a1;
     display: grid;
     align-items: center;

@@ -10,7 +10,10 @@
 .time-view {
     background: #923b9c;
     color: #def975;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: fit-content;
+    min-width: fit-content;
+    overflow-wrap: break-word;
     display: flex;
     align-items: center;
 }

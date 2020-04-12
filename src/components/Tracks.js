@@ -35,7 +35,6 @@ export default class Tracks extends React.Component {
             },
             error: data => {
                 console.log(data.status)
-                // Cache.clear();
             }
         });
     }
@@ -98,7 +97,6 @@ export default class Tracks extends React.Component {
                     
                 </div>
                 <div ref={el => this.artistView = el}>
-                {/* <Genres tracks={this.state.todaysTracks}/> */}
                     {this.state.displayNext ? <Artists/> : ""}
                 </div>
             </div>

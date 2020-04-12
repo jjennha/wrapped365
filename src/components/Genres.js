@@ -1,7 +1,6 @@
 import React from "react";
 import * as $ from "jquery";
 import { Cache } from "aws-amplify";
-import ".././css/Genres.css"
 import Tracks from "./Tracks";
 
 export default class Genres extends React.Component {

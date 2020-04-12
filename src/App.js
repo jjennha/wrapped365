@@ -1,24 +1,18 @@
 import React, { Component } from "react";
 import * as $ from "jquery";
-import './App.css';
-import { authEndpoint, clientId, redirectUri, scopes } from "./config";
+import './Imports';
+import { authEndpoint, clientId, redirectUri, scopes } from "./config_dev";
 import hash from "./components/Hash";
 import { Cache } from 'aws-amplify';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
   useHistory,
   useLocation
 } from "react-router-dom";
-import Genres from "./components/Genres";
-import Leaderboard from "./components/Leaderboard";
-import Homepage from "./components/Homepage";
 import Time from "./components/Time";
-import Tracks from "./components/Tracks";
-import Artists from "./components/Artists";
 
 class App extends Component {
   constructor() {
@@ -90,40 +84,18 @@ class App extends Component {
   render() {
     return (
       <Router>
-
         <div className="App-container">
           <div className="App">
-            {/* <div className="links-container">
-              <ul className="links">
-                <li><Link className="btn-nav" to="/">Home</Link></li>
-                <li><Link className="btn-nav" to="/artists">Artists</Link></li>
-                <li><Link className="btn-nav" to="/time">Time</Link></li>
-              </ul>
-            </div> */}
             <div className="header">
-              <h1 className="title">Wrapped<span className="title-detail">365</span>
-                <h4 className="description">Spotify Wrapped All Year Round</h4>
+              <h1 className="title">Wrapped
+              <h1 className="title title-detail">365</h1>
+                <h4 className="description">Spotify Wrapped All Year Round.</h4>
               </h1>
-
             </div>
-
-
             <Switch>
-              <PrivateRoute path="/leaderboard">
-                <Leaderboard />
-              </PrivateRoute>
-              <PrivateRoute path="/artists">
-                <Artists />
-              </PrivateRoute>
-              <PrivateRoute path="/time">
-                <Time token={this.state.token} />
-              </PrivateRoute>
               <Route path="/login">
                 <LoginPage />
               </Route>
-              <PrivateRoute path="/tracks">
-                <Tracks />
-              </PrivateRoute>
               <PrivateRoute path="/">
                 <div className="profile-container">
                   <div className="preview-img-container">
@@ -234,77 +206,3 @@ function LoginPage() {
     </div>
   );
 }
-/**
- *
- * var authorizeURL = spotifyApi.createAuthorizeURL(scopes);
-
-const oauth = {
-    domain: 'http://localhost:3000/',
-    scope: scopes,
-    redirectSignIn: `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
-      "%20"
-    )}&response_type=token&show_dialog=true`,
-    redirectSignOut: redirectUri,
-    responseType: 'code' // or 'token', note that REFRESH token will only be generated when the responseType is code
-
-}
-
-Amplify.configure(awsconfig);
-Auth.configure({oauth: oauth});
-// Auth.configure({ oauth });
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.signOut = this.signOut.bind(this);
-    // let the Hub module listen on Auth events
-    Hub.listen('auth', (data) => {
-        switch (data.payload.event) {
-            case 'signIn':
-                this.setState({authState: 'signedIn', authData: data.payload.data});
-                break;
-            case 'signIn_failure':
-                this.setState({authState: 'signIn', authData: null, authError: data.payload.data});
-                break;
-            default:
-                break;
-        }
-    });
-    this.state = {
-      authState: 'loading',
-      authData: null,
-      authError: null
-    }
-  }
-
-  componentDidMount() {
-    console.log('on component mount');
-    // check the current user when the App component is loaded
-    Auth.currentAuthenticatedUser().then(user => {
-      console.log(user);
-      this.setState({authState: 'signedIn'});
-    }).catch(e => {
-      console.log(e);
-      this.setState({authState: 'signIn'});
-    });
-  }
-
-  signOut() {
-    Auth.signOut().then(() => {
-      this.setState({authState: 'signIn'});
-    }).catch(e => {
-      console.log(e);
-    });
-  }
-
-  render() {
-    const { authState } = this.state;
-    return (
-      <div className="App">
-        {authState === 'loading' && (<div>loading...</div>)}
-        {authState === 'signIn' && <OAuthButton/>}
-        {authState === 'signedIn' && <button onClick={this.signOut}>Sign out</button>}
-      </div>
-    );
-  }
-}
- */

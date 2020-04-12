@@ -1,10 +1,22 @@
+html, body {margin: 0; padding: 0; overflow-x:hidden;}
 .App-container {
   height:100vh;
+  width:100vw;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
 }
 .App {
   text-align: center;
   background-color: #000000;
   height:100vh;
+  min-width: fit-content;
   display: flex;
     justify-content: center;
     flex-direction: column;
@@ -12,10 +24,10 @@
 .title {
   font-size: 7rem;
     color: #1ecd97;
-    width: -moz-fit-content;
     width: fit-content;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem 0;
+    display: inline-block;
 }
 .title-detail {
   color: #923b9c
@@ -65,15 +77,7 @@
 }
 
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-html, body {
-  height: 100%;
-}
 
 body {
   color: #eee;

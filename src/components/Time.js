@@ -1,8 +1,6 @@
 import React from "react";
-import Player from "./Player";
 import * as $ from "jquery";
 import { Cache } from "aws-amplify";
-import ".././css/Time.css"
 import Genres from "./Genres";
 
 export default class Time extends React.Component {
