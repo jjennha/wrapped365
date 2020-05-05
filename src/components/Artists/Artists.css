@@ -1,24 +1,24 @@
 .artist-container {
-    min-height: 100vh;
-    max-height: fit-content;
-    background-color: #bea1a1;
-    display: grid;
-    align-items: center;
+    padding: 1em;
+    padding-bottom: 5em;
+    min-height: 100%;
+    background: #131212;
 }
-  .artist-header h1 {
-      color: #5256d8;
-      font-size: 5em;
-  }
   .artists {
     margin: 0 auto;
     height: 100%;
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
   }
   .artist {
     display: inline-block;
     background-color: #0000004f;
     border-radius: .35rem;
     margin: 1.2rem;
-    padding: 1rem;
+    width: 20em;
+    align-items: center;
+    display: inline-flex;
   }
   .artist-label {
     background: #bea1a1;

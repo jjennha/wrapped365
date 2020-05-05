@@ -1,0 +1,24 @@
+.list-entry {
+    display: inline-flex;
+    background: #1d1f23;
+    margin: .3em;
+    border-left-style: ridge;
+    text-align: left;
+    font-size: 20px;
+    animation: appear-in-right 3s;
+    overflow: hidden;
+    height: 6em;
+    align-items: center;
+    width: 100%;
+}
+
+.list-entry .rank {
+    width: 7%;
+    min-width: 50px;
+    text-align: center;
+}
+
+.list-details {
+    font-size: .7em;
+    padding: 0 1.5em;
+  }

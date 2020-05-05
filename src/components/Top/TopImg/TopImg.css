@@ -1,0 +1,19 @@
+.preview-img {
+    width: 6em;
+    height: 6em;
+    overflow: hidden;
+}
+
+.preview-img img {
+    width: 6em;
+}
+
+.preview-img-large {
+    width: 15em;
+    height: 15em;
+    overflow: hidden;
+}
+
+.preview-img-large img {
+    width: 15em;
+}

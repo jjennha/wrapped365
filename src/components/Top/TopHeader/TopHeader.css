@@ -1,0 +1,33 @@
+.top-header-container {
+    font-size: .5em;
+    text-align: center;
+    padding: .5em 1em .5em 1em;
+    border-radius: 4rem;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.top-header {
+    border-radius: 10em;
+    background: #313131;
+    font-size: 1.5em;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 1em;
+    padding: .2em 1em;
+}
+
+.top-artist-header {
+    color: #b48dff;
+    float: left;
+}
+
+.top-track-header {
+    color: #def975;
+    float: right
+}
+
+.genre-header {
+    color: #ddf1ff;
+    float: right
+}

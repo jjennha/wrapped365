@@ -1,0 +1,16 @@
+.single-content-view {
+    display: flex;
+    margin: 0 auto;
+}
+
+.details-single {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.5em;
+    animation: appear-in-right 3s;
+}
+
+.details-artist {
+    animation: appear-in-left 3s;
+}

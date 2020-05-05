@@ -1,0 +1,36 @@
+.top-text {
+    font-size: 1.8em;
+    padding: .2em .5em;
+    width: fit-content;
+}
+
+.top-text-right {
+    margin: 0 auto;
+    margin-right: 0;
+}
+
+.top-track-name {
+    font-weight: 600;
+    color: #def975;
+    background: #313131;
+}
+
+.top-artist-name, .top-artist {
+    font-weight: 600;
+    color: #b48dff;
+    background: #313131;
+}
+
+.top-album,
+.top-followers {
+    font-style: italic;
+    color: #585858;
+    background: whitesmoke;
+    font-size: 1em;
+}
+
+.top-track-artist {
+    font-weight: 600;
+    background: #313131;
+    font-size: 1.5em;
+}

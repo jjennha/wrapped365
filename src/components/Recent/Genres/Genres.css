@@ -1,0 +1,23 @@
+.genre-bar {
+    text-align: right;
+    margin:.5em 0; 
+    animation: appear-in-left 3s;
+}
+.genre-fill {
+    padding: .5em .5em .5em 1em;
+    width: var(--fill);
+    background-color: #ddf1ff;
+    margin: auto;
+    margin-right: 0;
+    color: #313131;
+    text-transform: capitalize;
+    display: inline-block;
+}
+.genre-percent {
+    display: inline-block;
+    margin-right: .5em;
+    color: #ddf1ff;
+    font-size: 1.5em;
+    text-align: left;
+    vertical-align: middle;
+}
