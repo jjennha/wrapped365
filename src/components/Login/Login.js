@@ -1,5 +1,5 @@
 import React from "react";
-import { authEndpoint, clientId, redirectUri, scopes } from "../../config_dev";
+import { authEndpoint, clientId, redirectUri, scopes } from "../../config";
 import {
     useHistory,
     useLocation
