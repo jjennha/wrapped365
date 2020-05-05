@@ -24,6 +24,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  
 }
 
 .title {
@@ -114,5 +115,22 @@ body {
 
   to {
     clip-path: inset(0 0 0 0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .title,
+  .description,
+  .user-title {
+    text-align: center;
+  }
+  .description,.user-title {
+    font-size: .2em;
+  }
+  .display-options {
+    font-size: 1.5em;
+  }
+  body {
+    font-size: 1em
   }
 }

@@ -31,3 +31,12 @@
     color: #ddf1ff;
     float: right
 }
+
+@media only screen and (max-width: 600px) {
+    .top-track-header,
+    .top-artist-header,
+    .genre-header {
+        float: none;
+        /* font-size: 3em; */
+    }
+}

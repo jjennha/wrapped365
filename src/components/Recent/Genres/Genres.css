@@ -1,8 +1,9 @@
 .genre-bar {
     text-align: right;
-    margin:.5em 0; 
+    margin: .5em 0;
     animation: appear-in-left 3s;
 }
+
 .genre-fill {
     padding: .5em .5em .5em 1em;
     width: var(--fill);
@@ -13,6 +14,7 @@
     text-transform: capitalize;
     display: inline-block;
 }
+
 .genre-percent {
     display: inline-block;
     margin-right: .5em;
@@ -20,4 +22,17 @@
     font-size: 1.5em;
     text-align: left;
     vertical-align: middle;
+}
+
+@media only screen and (max-width: 600px) {
+    .genre-fill {
+        padding: .5em .5em .5em 1em;
+        width: 80%;
+        display: inline-block;
+        text-align: left;
+        font-size:.8em;
+    }
+    .genre-bar {
+        font-size: .8em
+    }
 }

@@ -14,3 +14,12 @@
 .details-artist {
     animation: appear-in-left 3s;
 }
+
+@media only screen and (max-width: 600px) {
+    .single-content-view {
+        display: block;
+    }
+    .details-single {
+        padding: 1em 0;
+    }
+}
