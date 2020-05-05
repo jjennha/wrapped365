@@ -51,5 +51,12 @@
 	}
 	to {
 		clip-path: inset(0 0 0 0);
-	}
+  }
+  
+}
+
+@media only screen and (max-width: 600px) {
+.artists {
+  column-count: 1;
+}
 }

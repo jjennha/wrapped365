@@ -17,3 +17,10 @@
 .preview-img-large img {
     width: 15em;
 }
+
+@media only screen and (max-width: 600px) {
+    .preview-img, .preview-img img {
+        width: 100%;
+        height:100%;
+    }
+}

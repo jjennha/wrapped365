@@ -22,3 +22,13 @@
     font-size: .7em;
     padding: 0 1.5em;
   }
+  @media only screen and (max-width: 600px) {
+    .list-details {
+        padding: 0;
+    }
+    .list-entry {
+        display: block;
+        margin-top: 1em;
+        height: fit-content;
+    }
+}
